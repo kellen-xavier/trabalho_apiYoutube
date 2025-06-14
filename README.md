@@ -1,6 +1,7 @@
-# apiYoutube
+# API YouTube!
 
 Projeto backend em Java + Spring Boot, com integração à API do YouTube e persistência local em SQLite.
+[Link da API](https://developers.google.com/youtube/v3?hl=pt-br)
 
 ## Sumário
 
