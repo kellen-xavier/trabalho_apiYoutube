@@ -2,6 +2,8 @@ package com.example.apiYoutube.service;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,12 +13,27 @@ public class YouTubeApiService {
 
     @Value("${youtube.api.key}")
     private String apiKey;
+    private static final String BASE_URL = "https://www.googleapis.com/youtube/v3/search";
 
-    // Exemplo de método que busca vídeos (apenas simulação)
-    public Map<String, Object> buscarVideos(String query) {
-        Map<String, Object> result = new HashMap<>();
-        result.put("query", query);
-        result.put("mensagem", "Aqui retorna os vídeos encontrados com a API do YouTube APÓS CONFIG.");
-        return result;
+    public Map buscarVideos(String query) {
+        RestTemplate restTemplate = new RestTemplate();
+
+        String url = UriComponentsBuilder.fromHttpUrl(BASE_URL)
+                .queryParam("part", "snippet")
+                .queryParam("maxResults", 10)
+                .queryParam("q", query)
+                .queryParam("key", apiKey)
+                .build()
+                .toUriString();
+
+        Map response = restTemplate.getForObject(url, Map.class);
+        return response;
     }
+
+//    public Map<String, Object> buscarVideos(String query) {
+//        Map<String, Object> result = new HashMap<>();
+//        result.put("query", query);
+//        result.put("mensagem", "Aqui retorna os vídeos encontrados com a API do YouTube APÓS CONFIG. ALUCINEI?");
+//        return result;
+//    }
 }

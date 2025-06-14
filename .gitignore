@@ -12,7 +12,8 @@ target/
 .DS_Store
 *.iml
 *.swp
-application-local.properties
+application.properties
+database.db
 
 ### STS ###
 .apt_generated

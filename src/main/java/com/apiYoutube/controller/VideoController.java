@@ -18,7 +18,7 @@ public class VideoController {
     }
 
     @GetMapping("/buscar-videos")
-    public Map<String, Object> buscarVideos(@RequestParam String query) {
+    public Map buscarVideos(@RequestParam String query) {
         return youTubeApiService.buscarVideos(query);
     }
 }
