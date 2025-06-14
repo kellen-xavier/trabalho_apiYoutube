@@ -4,6 +4,16 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+# Projeto
+/target/
+*.db
+*.log
+*.tmp
+.DS_Store
+*.iml
+*.swp
+application-local.properties
+
 ### STS ###
 .apt_generated
 .classpath
