@@ -1,4 +1,4 @@
-package com.example.apiYoutube.service;
+package com.apiyoutube.service;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -29,11 +29,4 @@ public class YouTubeApiService {
         Map response = restTemplate.getForObject(url, Map.class);
         return response;
     }
-
-//    public Map<String, Object> buscarVideos(String query) {
-//        Map<String, Object> result = new HashMap<>();
-//        result.put("query", query);
-//        result.put("mensagem", "Aqui retorna os vídeos encontrados com a API do YouTube APÓS CONFIG. ALUCINEI?");
-//        return result;
-//    }
 }
