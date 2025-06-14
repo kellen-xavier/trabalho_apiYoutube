@@ -13,7 +13,6 @@ Projeto backend em Java + Spring Boot, com integração à API do YouTube e pers
 - [Estrutura do Projeto](#estrutura-do-projeto)
 - [Endpoints Principais](#endpoints-principais)
 - [Personalização](#personalização)
-- [Licença](#licença)
 
 ---
 
